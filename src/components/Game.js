@@ -18,7 +18,9 @@ function Game(props) {
   useEffect(() => {
     let size;
     while (1) {
-      size = parseInt(prompt("Game's size must be between 3 and 20\nGame's size:"));
+      size = parseInt(
+        prompt("Game's size must be between 3 and 20\nGame's size:")
+      );
       if (size < 3 || size > 20 || isNaN(size)) {
         alert("Enter a number between 3 and 20");
       } else {
@@ -73,11 +75,8 @@ function Game(props) {
     boardSize,
     boardSize < 5 ? boardSize : 5
   );
-  winner.current = result >= 0
-    ? current.squares[result.winPos] > 0
-      ? "X"
-      : "O"
-    : null;
+  winner.current =
+    result.winPos >= 0 ? (current.squares[result.winPos] > 0 ? "X" : "O") : null;
 
   const moves = tempHistory.map((step, move) => {
     const movePosition = gameLogic.squareNumberToPosition(
@@ -111,6 +110,8 @@ function Game(props) {
   } else if (winner.current) {
     status = "Winner: " + winner.current;
   }
+
+  console.log(result);
 
   return (
     <>
