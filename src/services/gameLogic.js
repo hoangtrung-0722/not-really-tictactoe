@@ -23,7 +23,7 @@ const calculateWinner = (squares, squareEdge, winPoint) => {
           winPos: winPosition,
         };
       }
-      if (i != 0) {
+      if (i !== 0) {
         winPosition = crossLeftCheck(
           squares,
           squareEdge,
@@ -46,7 +46,7 @@ const calculateWinner = (squares, squareEdge, winPoint) => {
           winPos: winPosition,
         };
       }
-      if (i != squareEdge - 1) {
+      if (i !== squareEdge - 1) {
         winPosition = crossRightCheck(
           squares,
           squareEdge,

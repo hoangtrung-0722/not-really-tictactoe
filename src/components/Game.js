@@ -18,7 +18,7 @@ function Game(props) {
   useEffect(() => {
     let size;
     while (1) {
-      size = parseInt(prompt("Game's size: "));
+      size = parseInt(prompt("Game's size must be between 3 and 20\nGame's size:"));
       if (size < 3 || size > 20 || isNaN(size)) {
         alert("Enter a number between 3 and 20");
       } else {
